@@ -1,8 +1,10 @@
 <div align="center">
   <img src="steamfarmhourlinux.png" alt="Steam FarmHour Linux Logo">
+  <br><br>
+  <img src="captura.png" alt="Steam FarmHour Linux Screenshot" width="800">
 </div>
 
-# Steam FarmHour Linux
+# Steam FarmHour Linux (v1.1.0)
 🌎 [English](#english) | 🇦🇷 [Español](#español)
 
 ---
@@ -15,9 +17,9 @@ This project is a Steam simulator / idler for Linux (tested on Arch Linux). It a
 ## How it works
 
 The project uses the official Steam API (`libsteam_api.so`) to tell the Steam client that the games are running.
-The main script (`start.py`) works as a manager that launches and keeps multiple instances of the secondary script (`steam-idle.py`) in the background, one for each game you want to farm.
+The main script (`start.py`) works as a manager that launches and keeps multiple instances of the secondary script (`steam-idle.py`) in the background, one for each game you want to farm. **It now also features a unified responsive GUI that displays the covers of all your farmed games in a single window.**
 
-> **Note:** The `steam-idle.py` file is **strictly necessary**, as it is responsible for communicating directly with the Steam API and generating the GUI window for each game. `start.py` is just the multiple launcher.
+> **Note:** The `steam-idle.py` file is **strictly necessary**, as it is responsible for communicating directly with the Steam API. In version 1.1.0, it now runs in "headless" mode without cluttering your desktop with multiple windows.
 
 > [!IMPORTANT]
 > **Security Notice:** This application **DOES NOT collect, read, or store** any personal information, passwords, or data from your Steam client. Your account is completely safe. The script works solely and exclusively by communicating with the official API to "simulate" that the game is open to farm hours.
@@ -75,9 +77,9 @@ Este proyecto es un simulador / idler para Steam en Linux (probado en Arch Linux
 ## ¿Cómo funciona?
 
 El proyecto utiliza la API oficial de Steam (`libsteam_api.so`) para indicarle al cliente de Steam que los juegos se están ejecutando. 
-El script principal (`start.py`) funciona como un administrador que lanza y mantiene múltiples instancias del script secundario (`steam-idle.py`) en segundo plano, una por cada juego que deseas farmear.
+El script principal (`start.py`) funciona como un administrador que lanza y mantiene múltiples instancias del script secundario (`steam-idle.py`) en segundo plano, una por cada juego que deseas farmear. **Además, ahora cuenta con una interfaz gráfica unificada y responsiva que muestra todas las carátulas de los juegos en una sola ventana.**
 
-> **Nota:** El archivo `steam-idle.py` es **estrictamente necesario**, ya que es el encargado de comunicarse directamente con la API de Steam y generar la ventana gráfica para cada juego. `start.py` es solo el lanzador múltiple.
+> **Nota:** El archivo `steam-idle.py` es **estrictamente necesario**, ya que es el encargado de comunicarse directamente con la API de Steam. A partir de la v1.1.0, este se ejecuta de forma oculta ("headless") para no saturar tu escritorio ni dock con múltiples ventanas.
 
 > [!IMPORTANT]
 > **Aclaración de Seguridad:** Esta aplicación **NO recopila, ni lee, ni almacena** ningún tipo de información personal, contraseñas o datos de tu cliente de Steam. Tu cuenta está completamente segura. El script funciona única y exclusivamente comunicándose con la API oficial para "simular" que el juego está abierto y así sumar las horas.
