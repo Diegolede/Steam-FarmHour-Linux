@@ -19,7 +19,7 @@ The main script (`start.py`) works as a manager that launches and keeps multiple
 > **Security Notice:** This application **DOES NOT collect, read, or store** any personal information, passwords, or data from your Steam client. Your account is completely safe. The script works solely and exclusively by communicating with the official API to "simulate" that the game is open to farm hours.
 
 > [!TIP]
-> **🌟 Support the Project:** This software is **100% free**! If it has been useful to you and you feel like supporting my work, any small gesture is more than welcome (whether it's some Steam Points on my profile, or even a game if you're feeling generous). It is truly appreciated from the bottom of my heart, but definitely not required!
+> **🌟 Support the Project:** This software is **100% free**! If it has been useful to you and you feel like supporting my work, any small gesture is more than welcome (whether it's some Steam Points on my profile, leaving a "+rep" comment so I can feel your support, or even a game if you're feeling generous). It is truly appreciated from the bottom of my heart, but definitely not required!
 > 👉 **[Visit TRN1's Steam profile](https://steamcommunity.com/id/TRNONE/)**
 
 ## Requirements
@@ -79,7 +79,7 @@ El script principal (`start.py`) funciona como un administrador que lanza y mant
 > **Aclaración de Seguridad:** Esta aplicación **NO recopila, ni lee, ni almacena** ningún tipo de información personal, contraseñas o datos de tu cliente de Steam. Tu cuenta está completamente segura. El script funciona única y exclusivamente comunicándose con la API oficial para "simular" que el juego está abierto y así sumar las horas.
 
 > [!TIP]
-> **🌟 Apoyo al Proyecto:** ¡Este software es **100% gratuito**! Si te ha sido de utilidad y nace de ti apoyar mi trabajo, cualquier pequeño detalle es más que bienvenido (ya sean unos puntitos de Steam en mi perfil, o hasta algún juego si te sientes generoso). ¡Se agradece de todo corazón, pero para nada es obligatorio!
+> **🌟 Apoyo al Proyecto:** ¡Este software es **100% gratuito**! Si te ha sido de utilidad y nace de ti apoyar mi trabajo, cualquier pequeño detalle es más que bienvenido (ya sean unos puntitos de Steam en mi perfil, ir a dejarme un lindo "+rep" en los comentarios para sentir su apoyo, o hasta algún juego si te sientes generoso). ¡Se agradece de todo corazón, pero para nada es obligatorio!
 > 👉 **[Visitar perfil de TRN1 en Steam](https://steamcommunity.com/id/TRNONE/)**
 
 ## Requisitos
