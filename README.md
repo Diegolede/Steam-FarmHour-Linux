@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="steamfarmhourlinux.png" alt="Steam FarmHour Linux Logo">
+</div>
+
 # Steam FarmHour Linux
 🌎 [English](#english) | 🇦🇷 [Español](#español)
 
@@ -121,3 +125,8 @@ python start.py
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles. Creado por Diego Ledesma (TRN1).
+
+<div align="center">
+  <br>
+  <img src="trn.png" alt="TRN1 Signature" width="150">
+</div>
