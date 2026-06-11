@@ -76,16 +76,87 @@ try:
         print(colorCyan + f"[+] Lanzando emulación para AppID: {appID}..." + colorReset)
 
         # Ejecuta tu sub-script steam-idle.py pasándole el ID
-        p = subprocess.Popen([pyLink, "steam-idle.py", str(appID)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        p = subprocess.Popen([pyLink, "steam-idle.py", str(appID), "nogui"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         processes.append((appID, p))
 
     print(colorGreen + "\n¡Todos los juegos seleccionados están corriendo en segundo plano!" + colorReset)
-    print(colorYellow + "Dejá esta ventana abierta. Presioná Ctrl + C para CERRAR todos los juegos de golpe.\n" + colorReset)
+    print(colorYellow + "Cerrá la ventana de carátulas o presioná Ctrl + C en esta terminal para DETENER todos los juegos.\n" + colorReset)
 
-    # Bucle infinito eficiente para mantener el script sumando horas
-    while True:
-        time.sleep(3600)  # Duerme 1 hora
-        print(f"[{time.strftime('%H:%M:%S')}] Sincronizando con Steam... Horas acumulándose correctamente.")
+    import tkinter as tk
+    from PIL import Image, ImageTk
+    import io
+    from urllib.request import urlopen
+
+    gui = tk.Tk()
+    gui.title("Steam FarmHour Linux - Farmeando")
+    gui.configure(bg="#1e1e24")
+
+    def on_closing():
+        print(colorYellow + "\n\n[-] Deteniendo el farmeo (Ventana cerrada)..." + colorReset)
+        for aID, proc in processes:
+            try:
+                proc.terminate()
+                print(f" -> Emulación de AppID {aID} finalizada.")
+            except:
+                pass
+        print(colorGreen + "¡Listo! Todos los juegos se cerraron limpiamente." + colorReset)
+        gui.destroy()
+        sys.exit()
+
+    gui.protocol("WM_DELETE_WINDOW", on_closing)
+
+    gui.geometry("950x500") # Tamaño inicial razonable
+
+    import webbrowser
+    def open_profile():
+        webbrowser.open("https://steamcommunity.com/id/TRNONE/")
+
+    # Frame para los botones en la parte inferior
+    bottom_frame = tk.Frame(gui, bg="#1e1e24")
+    bottom_frame.pack(side="bottom", fill="x", padx=15, pady=15)
+
+    # Nota: Tkinter estándar no tiene "border-radius". 
+    # Usamos un estilo 'flat' sin bordes para darle un look moderno similar a botones redondeados/planos.
+    btn_profile = tk.Button(bottom_frame, text="⭐ Creator Steam Profile", font=("Arial", 12, "bold"), bg="#2a475e", fg="#66c0f4", activebackground="#171a21", activeforeground="white", command=open_profile, pady=10, cursor="hand2", relief="flat", bd=0)
+    btn_profile.pack(side="left", fill="both", expand=True, padx=(0, 5))
+
+    btn_stop = tk.Button(bottom_frame, text="🛑 STOP FARM", font=("Arial", 12, "bold"), bg="#d9534f", fg="white", activebackground="#c9302c", activeforeground="white", command=on_closing, pady=10, cursor="hand2", relief="flat", bd=0)
+    btn_stop.pack(side="right", fill="both", expand=True, padx=(5, 0))
+
+    # Frame para el contenedor de carátulas y su barra de desplazamiento (Scrollbar)
+    container_frame = tk.Frame(gui, bg="#1e1e24")
+    container_frame.pack(side="top", fill="both", expand=True, padx=15, pady=(15, 0))
+
+    # Scrollbar vertical
+    scrollbar = tk.Scrollbar(container_frame, bg="#1e1e24", troughcolor="#1e1e24")
+    scrollbar.pack(side="right", fill="y")
+
+    # Usamos un widget Text como contenedor para lograr un efecto "flexbox" responsivo
+    container = tk.Text(container_frame, bg="#1e1e24", bd=0, highlightthickness=0, wrap="char", yscrollcommand=scrollbar.set)
+    container.pack(side="left", fill="both", expand=True)
+    scrollbar.config(command=container.yview)
+
+    images = []
+
+    for appID in GAMES_TO_IDLE:
+        try:
+            url = f"http://cdn.akamai.steamstatic.com/steam/apps/{appID}/header_292x136.jpg"
+            image_bytes = urlopen(url).read()
+            data_stream = io.BytesIO(image_bytes)
+            pil_image = Image.open(data_stream)
+            # Mantenemos el tamaño original 292x136 para que no queden cortas
+            tk_image = ImageTk.PhotoImage(pil_image)
+            images.append(tk_image)
+
+            lbl = tk.Label(container, image=tk_image, bg="#1e1e24", bd=0)
+            container.window_create("end", window=lbl, padx=5, pady=5)
+        except Exception:
+            lbl = tk.Label(container, text=f"AppID {appID}\nSin Imagen", fg="white", bg="#333333", width=35, height=8)
+            container.window_create("end", window=lbl, padx=5, pady=5)
+
+    container.configure(state="disabled")
+
+    gui.mainloop()
 
 except KeyboardInterrupt:
     print(colorYellow + "\n\n[-] Deteniendo el farmeo... Cerrando procesos de forma segura." + colorReset)

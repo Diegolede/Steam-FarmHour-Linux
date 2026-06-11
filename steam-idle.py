@@ -50,11 +50,12 @@ def init_gui(str_app_id):
     return gui
     
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         print("Wrong number of arguments")
         sys.exit()
         
     str_app_id = sys.argv[1]
+    nogui = len(sys.argv) >= 3 and sys.argv[2] == "nogui"
     
     os.environ["SteamAppId"] = str_app_id
     try:
@@ -63,5 +64,10 @@ if __name__ == '__main__':
         print("Couldn't initialize Steam API")
         sys.exit()
         
-    gui = init_gui(str_app_id)
-    gui.mainloop()
+    if nogui:
+        import time
+        while True:
+            time.sleep(3600)
+    else:
+        gui = init_gui(str_app_id)
+        gui.mainloop()
