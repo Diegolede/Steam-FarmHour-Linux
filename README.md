@@ -1,5 +1,5 @@
 # Steam FarmHour Linux
-🌎 [English](#english) | 🇪🇸 [Español](#español)
+🌎 [English](#english) | 🇦🇷 [Español](#español)
 
 ---
 
@@ -64,7 +64,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <a name="español"></a>
-# 🇪🇸 Español
+# 🇦🇷 Español
 
 Este proyecto es un simulador / idler para Steam en Linux (probado en Arch Linux). Te permite sumar horas de juego ("farmear") en múltiples juegos de Steam simultáneamente, sin necesidad de tenerlos instalados ni abiertos consumiendo recursos.
 
