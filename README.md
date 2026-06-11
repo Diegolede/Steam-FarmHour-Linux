@@ -12,6 +12,10 @@ El script principal (`start.py`) funciona como un administrador que lanza y mant
 > [!IMPORTANT]
 > **Aclaración de Seguridad:** Esta aplicación **NO recopila, ni lee, ni almacena** ningún tipo de información personal, contraseñas o datos de tu cliente de Steam. Tu cuenta está completamente segura. El script funciona única y exclusivamente comunicándose con la API oficial para "simular" que el juego está abierto y así sumar las horas.
 
+> [!TIP]
+> **🌟 Apoyo al Proyecto:** ¡Este software es **100% gratuito**! Si te ha servido y quieres agradecer mi trabajo, me ayudarías muchísimo regalándome unos **puntos de Steam (Steam Points)** directamente en mi perfil.
+> 👉 **[Visitar perfil de TRN1 en Steam](https://steamcommunity.com/id/TRNONE/)**
+
 ## Requisitos
 
 El script necesita los siguientes paquetes de Python para funcionar (particularmente para la pequeña interfaz gráfica que muestra la imagen del juego):
@@ -48,10 +52,6 @@ python start.py
 
 6. Deja la terminal abierta. Cuando quieras dejar de farmear, presiona `Ctrl + C` en la terminal y el script cerrará todas las instancias de forma segura.
 
-## Apoyo
-
-Si este proyecto te ha servido y te gusta, ¡me ayudarías un montón regalándome unos puntos de Steam (Steam Points) en mi perfil!
-**Mi perfil de Steam:** [TRN1](https://steamcommunity.com/id/TRNONE/)
 
 ## Licencia
 
