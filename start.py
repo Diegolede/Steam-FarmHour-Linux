@@ -30,7 +30,7 @@ print(colorYellow + "Si te gusta la app, ¡puedes premiar mi perfil con puntos!"
 # Ejemplo: [AppID_Juego1, AppID_Juego2]
 # =========================================================================
 GAMES_TO_IDLE = [
-    3321460,#crimson desert
+    304930, #Unturned
     730, #cs2
     2507950,#Delta Force
     582660,#Black desert
@@ -47,6 +47,7 @@ GAMES_TO_IDLE = [
     1091500, #Cyberpunk
     1144200, #ready or not
     1404210, #rdr
+    3321460,#crimson desert
 
     # Reemplazá este número por el AppID real del juego que quieras (fijate en su URL de la tienda)
     # 570,    # Podés desmarcar y agregar más IDs (ej: Dota 2)
